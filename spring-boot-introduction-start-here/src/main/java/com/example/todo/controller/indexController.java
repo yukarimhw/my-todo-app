@@ -13,4 +13,16 @@ public class indexController {
       public String index() {
           return "index";
       }
+
+    //　/loginにGetメソッドが来たらログインページを表示
+    @GetMapping("/login")
+    public String showLoginForm() {
+        return "login";
+    }
+
+    // ログアウトページの表示
+    @GetMapping("/logout")
+    public String showLogoutForm() {
+        return "logout";
+    }
 }

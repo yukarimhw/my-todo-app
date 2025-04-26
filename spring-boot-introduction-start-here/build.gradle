@@ -35,6 +35,12 @@ dependencies {
 	implementation group: 'org.webjars', name: 'bootstrap', version: '5.2.3'
 	implementation group: 'org.webjars', name: 'webjars-locator-core', version: '0.52'
 	implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '3.2.1'
+
+    // security関連
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
