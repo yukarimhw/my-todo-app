@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja"
       xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/layout}">
 <head>
@@ -10,7 +11,14 @@
 <section layout:fragment="content">
     <div class="text-center">
         <h1 class="h1">タスク管理のお手伝いをします</h1>
-        <p>タスク一覧から始めてください！</p>
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="./tasks/list.html" th:href="@{/tasks}" class="btn btn-primary">タスク一覧</a>
+            </li>
+            <li sec:authorize="hasAuthority('ADMIN')" class="list-inline-item">
+                <a href="./users/list.html" th:href="@{/users}" class="btn btn-primary">ユーザー一覧</a>
+            </li>
+        </ul>
             <a href="./logout.html" th:href="@{/logout}">ログアウト</a>
     </div>
 </section>

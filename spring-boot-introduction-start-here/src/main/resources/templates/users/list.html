@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+<head>
+    <title>ユーザー一覧 | 課題管理アプリケーション</title>
+</head>
+<body>
+<section layout:fragment="content">
+<a href="../creationForm.html" th:href="@{/users/creationForm}" class="btn btn-primary">作成</a>
+
+<table class="table mt-3">
+  <thead>
+  <tr>
+    <th>ユーザー名</th>
+    <th>権限</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr th:each="user : ${userList}">
+    <th th:text="${user.username}">(username)</th>
+    <th th:text="${user.authority}">(authority)</th>
+  </tr>
+  </tbody>
+</table>
+
+</section>
+</body>
+</html>

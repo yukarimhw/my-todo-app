@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja"
       xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
   <meta charset="UTF-8">
@@ -24,6 +25,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" th:href="@{/tasks}">タスク一覧</a>
+          </li>
+          <li sec:authorize="hasAuthority('ADMIN')" class="nav-item">
+            <a class="nav-link" th:href="@{/users}">ユーザー一覧</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" th:href="@{/logout}">ログアウト</a>
