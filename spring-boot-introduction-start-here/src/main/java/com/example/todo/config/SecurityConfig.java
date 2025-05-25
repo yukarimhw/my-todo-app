@@ -19,29 +19,18 @@ public class SecurityConfig  {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-
                 .authorizeHttpRequests(authorize -> authorize
-                        // H2コンソールへのアクセスを許可　後で消す
-                        .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
+
                         .requestMatchers(new AntPathRequestMatcher("/login/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/users/**")).hasAuthority("ADMIN")
                         .anyRequest().authenticated()
                 )
-                // CSRF対策をH2コンソールで無効化
-                .csrf(csrf -> csrf
-                        .ignoringRequestMatchers(new AntPathRequestMatcher("/h2-console/**"))
-                )
-                // フレームオプションを無効化
-                .headers(headers -> headers
-                        .frameOptions(frameOptions -> frameOptions.disable())
-                )
+
                 // フォームログインの設定
                 .formLogin(form -> form
                         .loginPage("/login")
                         .permitAll()
                 );
-
-
         return http.build();
     }
 
@@ -50,6 +39,4 @@ public class SecurityConfig  {
         //ハッシュ化
         return  new BCryptPasswordEncoder();
     }
-
-
 }
