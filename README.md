@@ -1,29 +1,54 @@
 TODOアプリです。<br>
+
 ～使用技術～<br>
 ＜言語＞ 
- Java /HTML /CSS<br> 
+ &nbsp;Java /HTML /CSS<br> 
+ ＜開発環境＞
+ &nbsp;Intelij<br> 
+ ＜データベース＞
+ &nbsp; MySQL<br>
 ＜フレームワーク＞
- Springboot<br>
-＜データベース＞
- MySQL<br>
+ &nbsp;Springboot/ MyBatis<br>
 ＜テスト＞
- Junit<br>
+ &nbsp;Junit<br>
 ＜バージョン管理（途中から)＞
- Github<br>
+&nbsp; Github<br>
 ＜ライブラリ＞
-<br>
+&nbsp;Lombok <br>
 ＜テンプレートエンジン＞
- Thymeleaf<br>
+ &nbsp;Thymeleaf<br><br>
 
-＜開発環境＞
-　Intelij
-＜構成＞
-ヘッダー　ナビ /メインビジュアル /メインコンテンツ /フッター
 
-架空のサイト　PremiumBathというお風呂用品を取り扱うお店の簡易トップページです。 製作時間は約20時間です。 ロゴの制作はIllustrator、写真の加工はPhotoshopで行っています。 使用画像はフリー素材をお借りしています。
+～ページ構成～
+<ul>
+  <li>ログイン</li>
+  <li>トップ</li>
+  <li>タスク一覧</li>
+  <li>タスク詳細</li>
+  <li>タスク作成</li>
+  <li>タスク編集・削除</li>
+  <li>ユーザー一覧画面（Adminのみ）</li>
+  <li>ユーザー作成画面（Adminのみ）</li>
+  <li>ログアウト画面</li>
+  <li>404エラーページ</li>
+  <li>405エラーページ</li>
+</ul>
 
-＜使用言語＞
-　HTML /CSS /Javascript（JQuery）
+～説明～<br>
+<セキュリティ対策><br>
+・バリデーションによりパスワードを12文字以上（128文字以下）でしか登録できないようにしています。（JPCERT/CC）<br>
+・パスワード登録時ハッシュ、ソルト、ストレッチングを用いてエンコードしてからデータベースへ登録されるように実装しています。
 
-＜構成＞
-ヘッダー　ナビ /メインビジュアル /メインコンテンツ /フッター
+＜権限制限＞<br>
+authority(権限)　AdminとUser（一般）の2種類用意<br>
+Adminのみできること<br>
+・ユーザー一覧画面へのアクセス<br>
+・ユーザー登録画面へのアクセス（＋ユーザー登録）
+
+制限は3段階により実装している<br>
+1、<br>
+2、<br>
+3、<br>
+
+
+
