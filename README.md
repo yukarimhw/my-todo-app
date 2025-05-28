@@ -2,13 +2,13 @@ TODOアプリです。<br>
 
 ～使用技術～<br>
 ＜言語＞ 
- &nbsp;Java /HTML /CSS<br> 
+ &nbsp;Java 17/HTML /CSS(Bootstrap)<br> 
  ＜開発環境＞
  &nbsp;Intelij<br> 
  ＜データベース＞
  &nbsp; MySQL<br>
 ＜フレームワーク＞
- &nbsp;Springboot/ MyBatis<br>
+ &nbsp;Springboot version '3.1.2'/ SpringSecurity/ MyBatis/ Bootstrap<br>
 ＜テスト＞
  &nbsp;Junit<br>
 ＜バージョン管理（途中から)＞
