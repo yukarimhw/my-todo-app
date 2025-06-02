@@ -42,6 +42,7 @@ TODOアプリです。<br>
  <li>タスク登録</li>
   <li>タスク編集</li>
   <li>タスク削除</li>
+ <li>タスク検索（summary全文検索/Statusのdo・doing・done検索）</li>
   <li>ユーザー登録（Adminのみ）</li>
 </ul><br>
 ～説明～<br>
